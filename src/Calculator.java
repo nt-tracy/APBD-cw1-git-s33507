@@ -5,22 +5,17 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double num1, num2, result;
-        char operator;
 
         System.out.println("--- Prosty Kalkulator Java ---");
+        System.out.println("Enter your operation: ");
+        String op = scanner.nextLine();
 
-        // Pobranie pierwszej liczby
-        System.out.print("Wpisz pierwszą liczbę: ");
-        num1 = scanner.nextDouble();
+        String[] parts = op.split("(?<=[-+*/])|(?=[-+*/])");
 
-        // Pobranie operatora
-        System.out.print("Wybierz operator (+, -, *, /): ");
-        operator = scanner.next().charAt(0);
-
-        // Pobranie drugiej liczby
-        System.out.print("Wpisz drugą liczbę: ");
-        num2 = scanner.nextDouble();
+        double num1 = Double.parseDouble(parts[0].trim());
+        char operator = parts[1].trim().charAt(0);
+        double num2 = Double.parseDouble(parts[2].trim());
+        double result;
 
         // Obliczenia
 
@@ -46,7 +41,7 @@ public class Calculator {
                 throw new RuntimeException("Invalid operator");
         }
 
-        System.out.println("Wynik: " + num1 + operator + num2 + " = " + result);
+        System.out.println("Wynik: " + num1 + " " + operator  + " " + num2 + " = " + result);
         scanner.close();
     }
 }
