@@ -1,0 +1,49 @@
+[33mcommit b8c7ccdbb3de2103593fae8c626124bb8fbac86d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Natalia Tracewicz <s33507@pjwstk.edu.pl>
+Date:   Thu Mar 19 21:03:57 2026 +0100
+
+    Changed data entry method
+
+[1mdiff --git a/src/Calculator.java b/src/Calculator.java[m
+[1mindex 6c2eb1d..97447c1 100644[m
+[1m--- a/src/Calculator.java[m
+[1m+++ b/src/Calculator.java[m
+[36m@@ -5,22 +5,17 @@[m [mimport java.util.Scanner;[m
+ public class Calculator {[m
+     public static void main(String[] args) {[m
+         Scanner scanner = new Scanner(System.in);[m
+[31m-        double num1, num2, result;[m
+[31m-        char operator;[m
+ [m
+         System.out.println("--- Prosty Kalkulator Java ---");[m
+[32m+[m[32m        System.out.println("Enter your operation: ");[m
+[32m+[m[32m        String op = scanner.nextLine();[m
+ [m
+[31m-        // Pobranie pierwszej liczby[m
+[31m-        System.out.print("Wpisz pierwszą liczbę: ");[m
+[31m-        num1 = scanner.nextDouble();[m
+[32m+[m[32m        String[] parts = op.split("(?<=[-+*/])|(?=[-+*/])");[m
+ [m
+[31m-        // Pobranie operatora[m
+[31m-        System.out.print("Wybierz operator (+, -, *, /): ");[m
+[31m-        operator = scanner.next().charAt(0);[m
+[31m-[m
+[31m-        // Pobranie drugiej liczby[m
+[31m-        System.out.print("Wpisz drugą liczbę: ");[m
+[31m-        num2 = scanner.nextDouble();[m
+[32m+[m[32m        double num1 = Double.parseDouble(parts[0].trim());[m
+[32m+[m[32m        char operator = parts[1].trim().charAt(0);[m
+[32m+[m[32m        double num2 = Double.parseDouble(parts[2].trim());[m
+[32m+[m[32m        double result;[m
+ [m
+         // Obliczenia[m
+ [m
+[36m@@ -46,7 +41,7 @@[m [mpublic class Calculator {[m
+                 throw new RuntimeException("Invalid operator");[m
+         }[m
+ [m
+[31m-        System.out.println("Wynik: " + num1 + operator + num2 + " = " + result);[m
+[32m+[m[32m        System.out.println("Wynik: " + num1 + " " + operator  + " " + num2 + " = " + result);[m
+         scanner.close();[m
+     }[m
+ }[m

@@ -44,4 +44,11 @@ public class Calculator {
         System.out.println("Wynik: " + num1 + " " + operator  + " " + num2 + " = " + result);
         scanner.close();
     }
+    public static double CalculateAverage(int[] values) {
+        int sum = 0;
+        for (int value : values) {
+            sum += value;
+        }
+        return (double) sum / values.length;
+    }
 }
