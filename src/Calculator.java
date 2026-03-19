@@ -6,6 +6,7 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Test - to change later");
         System.out.println("--- Your first calculator :> ---");
         System.out.println("Enter your operation: ");
         String op = scanner.nextLine();
