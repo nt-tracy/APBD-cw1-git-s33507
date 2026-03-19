@@ -7,6 +7,7 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("On branch conflict line :<");
+
         System.out.println("--- Your first calculator :> ---");
         System.out.println("Enter your operation: ");
         String op = scanner.nextLine();
