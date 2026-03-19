@@ -60,4 +60,7 @@ public class Calculator {
         }
         return max;
     }
+    public static int CalculateMin(int[] values) {
+        return 0;
+    }
 }
