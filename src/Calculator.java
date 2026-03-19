@@ -46,7 +46,7 @@ public class Calculator {
                 throw new RuntimeException("Invalid operator");
         }
 
-        System.out.println("Wynik: " + result);
+        System.out.println("Wynik: " + num1 + operator + num2 + " = " + result);
         scanner.close();
     }
 }
