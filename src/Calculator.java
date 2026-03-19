@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Calculator {
@@ -21,6 +23,7 @@ public class Calculator {
         num2 = scanner.nextDouble();
 
         // Obliczenia
+
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -40,8 +43,7 @@ public class Calculator {
                 }
                 break;
             default:
-                System.out.println("Błędny operator!");
-                return;
+                throw new RuntimeException("Invalid operator");
         }
 
         System.out.println("Wynik: " + result);
